@@ -15,8 +15,18 @@ struct pr
 void findDetails(struct node *root);
 void printGantt(struct node *root, int n);
 void displayDetails(struct node *root, int n);
-void findprocess(int time);
+//void findprocess(int time);
 
+/**
+
+The code consists of two structures, one for storing the details of the process and 
+the other for storing the arrival time and burst time of a process.
+
+The code contains five functions:
+
+**/
+
+// This is the main function that takes user input to select which algorithm to use and to enter the details of the processes.
 int main()
 {
      int n, i = 0, j = 0;
@@ -169,6 +179,7 @@ int main()
      return 0;
 }
 
+// This function displays the waiting time, turnaround time, and completion time for each process.
 void displayDetails(struct node *root, int n)
 {
      float avgtat = 0, avgwt = 0;
@@ -188,6 +199,7 @@ void displayDetails(struct node *root, int n)
      printf("\nRata-rata Waiting Time : %.2f", avgwt);
 }
 
+// This function prints the Gantt chart of the processes.
 void printGantt(struct node *root, int n)
 {
      int i;
@@ -218,6 +230,7 @@ void printGantt(struct node *root, int n)
      }
 }
 
+// This function calculates the waiting time and turnaround time for each process.
 void findDetails(struct node *root)
 {
      int fr = 0, ad;
