@@ -5,6 +5,8 @@ void FCFS();
 void SJF();
 void RR();
 void PS();
+
+// The main function contains a switch statement that calls one of the scheduling functions based on the user's input.
 int main()
 {
     printf("\n\n 1. FCFS \n 2. SJF \n 3. Round Robin \n 4. Priority Scheduling \n 5. Keluar");
@@ -43,6 +45,11 @@ int main()
     }
 }
 
+/**
+In the FCFS function, the program prompts the user to enter the number of processes and their burst times. 
+It calculates the waiting time and turnaround time for each process and displays them along with the average waiting time 
+and average turnaround time for all processes. 
+**/
 void FCFS()
 {
     int n, bt[20], wt[20], tat[20], avwt = 0, avtat = 0, i, j;
@@ -77,6 +84,13 @@ void FCFS()
     printf("\n Rata-rata Turnaround Time:%d", avtat);
 }
 
+
+/*
+In the SJF function, the program prompts the user to enter the number of processes and their burst times. 
+It then sorts the processes in ascending order of their burst times using selection sort algorithm. 
+The program then calculates the waiting time and turnaround time for each process and displays them along 
+with the average waiting time and average turnaround time for all processes.
+*/
 void SJF()
 {
     int bt[20], p[20], wt[20], tat[20], i, j, n, total = 0, pos, temp;
@@ -131,6 +145,12 @@ void SJF()
     printf("\n Rata-rata Turnaround Time=%f\n", avg_tat);
 }
 
+/*
+In the RR function, the program prompts the user to enter the number of processes, their arrival times and burst times, 
+and the time quantum. It simulates the Round Robin scheduling algorithm by repeatedly allocating the time quantum to each process 
+until all processes have completed execution. The program calculates the waiting time and turnaround time for each process 
+and displays them along with the average waiting time and average turnaround time for all processes.
+*/
 void RR()
 {
     int count, n, time, remain, flag = 0, time_quantum;
@@ -187,6 +207,12 @@ void RR()
     printf(" Avg Turnaround Time = %f", turnaround_time * 1.0);
 }
 
+/*
+In the PS function, the program prompts the user to enter the number of processes, their burst times, and their priority levels. 
+It sorts the processes in ascending order of their priority levels using selection sort algorithm. 
+The program then calculates the waiting time and turnaround time for each process and displays them along with 
+the average waiting time and average turnaround time for all processes.
+*/
 void PS()
 {
     typedef struct
